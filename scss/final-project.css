@@ -1,0 +1,52 @@
+@charset "UTF-8";
+@use "final-project/abstracts/variables" as *;
+@use "final-project/abstracts/functions" as *;
+@use "final-project/abstracts/mixins" as *;
+/*
+Create a professional SASS architecture by building these files:
+
+ABSTRACTS (Foundation - no CSS output):
+├── _variables.scss    - Colors, fonts, spacing, breakpoints
+├── _functions.scss    - Custom functions for calculations
+└── _mixins.scss      - Reusable mixins for buttons, cards, etc.
+
+BASE (Global styles):
+├── _reset.scss       - CSS reset/normalize
+└── _typography.scss  - Font styles, headings, body text
+
+LAYOUT (Major sections):
+├── _grid.scss        - Container and grid system
+├── _header.scss      - Navigation and header
+└── _footer.scss      - Footer styles
+
+COMPONENTS (Reusable UI):
+├── _buttons.scss     - All button variations
+├── _cards.scss       - Exhibit cards, vendor cards, ticket cards
+└── _forms.scss       - Newsletter form, inputs
+
+PAGES (Page-specific):
+└── _home.scss        - Hero section, exhibits, vendors, schedule
+
+FEATURES TO IMPLEMENT:
+✅ Variables for consistent design tokens
+✅ Mixins for reusable button and card styles
+✅ Functions for responsive calculations
+✅ @for loops for utility classes and grid system
+✅ @each loops for theme variations (card types)
+✅ @if/@else for conditional styling (card badges)
+✅ Built-in functions (color.adjust, mix)
+✅ Proper nesting that mirrors HTML structure
+✅ Responsive design with mobile-first approach
+✅ Well-organized partials for maintainability
+
+BONUS CHALLENGES:
+🌟 Create a color theme system using maps
+🌟 Generate utility classes with loops
+🌟 Build a responsive grid system
+🌟 Use advanced mixins with @content blocks
+🌟 Implement smooth animations and transitions
+🌟 Create hover effects with color functions
+
+Remember: This should demonstrate PROFESSIONAL SASS organization!
+*/
+/*# sourceMappingURL=final-project.css.map */

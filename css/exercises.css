@@ -1,0 +1,1135 @@
+@charset "UTF-8";
+.candy-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.candy-card {
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.candy-card .candy-image {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.candy-card .candy-name {
+  font-family: "Arial", sans-serif;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+}
+.candy-card .candy-description {
+  color: #666;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+.candy-card .candy-price {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.candy-card .buy-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.candy-card .buy-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.candy-card.lollipop {
+  border-left: 4px solid #ff6b9d;
+}
+.candy-card.lollipop .buy-button {
+  background: #ff6b9d;
+  color: white;
+}
+.candy-card.gummy {
+  border-left: 4px solid #32CD32;
+}
+.candy-card.gummy .buy-button {
+  background: #32CD32;
+  color: white;
+}
+.candy-card.chocolate {
+  border-left: 4px solid #8B4513;
+}
+.candy-card.chocolate .buy-button {
+  background: #8B4513;
+  color: white;
+}
+.candy-card.cotton-candy {
+  border-left: 4px solid #9370DB;
+}
+.candy-card.cotton-candy .buy-button {
+  background: #9370DB;
+  color: white;
+}
+.candy-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.exercise-instructions {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.exercise-instructions h2 {
+  color: #333;
+  margin-top: 0;
+}
+.exercise-instructions .tip {
+  background: #e8f5e8;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #4caf50;
+  margin-top: 20px;
+}
+
+/*
+After completing this exercise, think about:
+
+1. How many times did you type each color value?
+   - Without variables: Every time you used it
+   - With variables: Just once (in the variable definition)
+
+2. What happens when you want to change a color?
+   - Without variables: Find and replace everywhere
+   - With variables: Change it in one place
+
+3. How does nesting compare to regular CSS?
+   - Regular CSS: .candy-card .buy-button:hover { ... }
+   - SASS nesting: Inside .candy-card, inside .buy-button, &:hover { ... }
+
+4. Look at the compiled CSS in css/exercises.css
+   - How does SASS nesting become regular CSS?
+   - How are variables replaced with actual values?
+
+This is the power of preprocessing - write better code, get standard CSS!
+*/
+.candy-shop-interface {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.shop-header {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+.shop-header:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+.shop-header .shop-title {
+  margin: 0;
+  font-size: 3rem;
+  color: #333;
+}
+.shop-header .shop-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background: #3498db;
+  color: white;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn.btn-primary {
+  display: inline-block;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background: #e74c3c;
+  color: white;
+}
+.btn.btn-primary:hover {
+  transform: translateY(-2px);
+}
+.btn.btn-secondary {
+  display: inline-block;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background: #3498db;
+  color: white;
+}
+.btn.btn-secondary:hover {
+  transform: translateY(-2px);
+}
+.btn.btn-accent {
+  display: inline-block;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background: #f39c12;
+  color: white;
+}
+.btn.btn-accent:hover {
+  transform: translateY(-2px);
+}
+.btn.btn-small {
+  display: inline-block;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  background: #e74c3c;
+  color: white;
+}
+.btn.btn-small:hover {
+  transform: translateY(-2px);
+}
+.btn.btn-medium {
+  display: inline-block;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background: #3498db;
+  color: white;
+}
+.btn.btn-medium:hover {
+  transform: translateY(-2px);
+}
+.btn.btn-large {
+  display: inline-block;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  padding: 16px 32px;
+  font-size: 1.125rem;
+  background: #f39c12;
+  color: white;
+}
+.btn.btn-large:hover {
+  transform: translateY(-2px);
+}
+
+.featured-section {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.featured-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+.featured-section h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.candy-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.candy-item {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 200px;
+  flex: 1;
+}
+.candy-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+.candy-item .candy-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.candy-item h3 {
+  margin: 0 0 1rem 0;
+  color: #333;
+}
+.candy-item.size-small {
+  padding: 0.75rem;
+}
+.candy-item.size-medium {
+  padding: 1rem;
+}
+.candy-item.size-large {
+  padding: 1.5rem;
+}
+
+.responsive-section {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.responsive-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+.responsive-section h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.responsive-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.responsive-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+.responsive-card h3 {
+  color: #e74c3c;
+  margin-top: 0;
+}
+.responsive-card p {
+  color: #666;
+  line-height: 1.6;
+}
+@media (max-width: 768px) {
+  .responsive-card {
+    padding: 1rem;
+  }
+}
+@media (min-width: 1024px) {
+  .responsive-card {
+    padding: 2rem;
+  }
+}
+
+.responsive-example {
+  color: red;
+}
+@media (max-width: 767px) {
+  .responsive-example {
+    color: blue;
+    font-size: 14px;
+  }
+}
+@media (min-width: 1024px) {
+  .responsive-example {
+    color: green;
+    font-size: 18px;
+  }
+}
+
+/*
+After completing this exercise, think about:
+
+1. How many times did you write button styles?
+   - Without mixins: Every single button class
+   - With mixins: Once in the mixin, then just @include everywhere
+
+2. What happens when you want to change button styling?
+   - Without mixins: Update every button class individually
+   - With mixins: Change the mixin once, all buttons update
+
+3. How do functions help with calculations?
+   - Static values: Hard to maintain and adjust
+   - Function values: Change the base value, everything scales
+
+4. What's the difference between mixins and functions?
+   - Functions: Return single values (colors, sizes, numbers)
+   - Mixins: Return groups of CSS properties (entire style blocks)
+
+5. Look at the compiled CSS - how do your mixins become regular CSS?
+
+This is DRY (Don't Repeat Yourself) programming applied to CSS!
+*/
+/*
+Variables & Mixins First:
+- Other files depend on these
+- Colors, spacing, reusable functions
+
+Base Styles:
+- Typography, resets, global styles
+- Foundation that everything builds on
+
+Components:
+- Reusable UI elements (buttons, forms)
+- Can be used anywhere in the site
+
+Layout Sections:
+- Page-specific areas
+- Build using base styles and components
+
+This creates a dependency hierarchy:
+Layout → Components → Base → Mixins/Variables
+
+Benefits:
+✅ Easy to find specific styles
+✅ Reusable across projects
+✅ Team members can work on different files
+✅ Smaller, focused files
+✅ Better git history (changes are isolated)
+*/
+/*
+1. _variables.scss - Define your color palette, fonts, spacing
+2. _mixins.scss - Create reusable mixins for buttons, cards, flex layouts
+3. _base.scss - Basic typography, resets, global styles
+4. _buttons.scss - All button variations and states
+5. _navigation.scss - Navigation bar styles
+6. _hero.scss - Hero section layout and styling
+7. _categories.scss - Category grid and card styles
+8. _newsletter.scss - Newsletter signup section
+9. _footer.scss - Footer layout and links
+*/
+/*
+scss/
+├── abstracts/          # Pure Sass, no CSS output
+│   ├── _variables.scss
+│   ├── _mixins.scss
+│   └── _functions.scss
+├── vendors/           # Third-party CSS
+│   └── _bootstrap.scss
+├── base/              # Basic styles
+│   ├── _reset.scss
+│   └── _typography.scss
+├── layout/            # Major layout components
+│   ├── _header.scss
+│   ├── _footer.scss
+│   └── _sidebar.scss
+├── components/        # Reusable components
+│   ├── _buttons.scss
+│   ├── _carousel.scss
+│   └── _dropdown.scss
+├── pages/            # Page-specific styles
+│   ├── _home.scss
+│   └── _about.scss
+└── main.scss         # Main file importing everything
+*/
+.m-1 {
+  margin: 0.25rem;
+  padding: 10px;
+  background: rgb(253.3561643836, 242.7397260274, 241.6438356164);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.m-2 {
+  margin: 0.5rem;
+  padding: 10px;
+  background: rgb(253.3561643836, 242.7397260274, 241.6438356164);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.m-3 {
+  margin: 0.75rem;
+  padding: 10px;
+  background: rgb(253.3561643836, 242.7397260274, 241.6438356164);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.m-4 {
+  margin: 1rem;
+  padding: 10px;
+  background: rgb(253.3561643836, 242.7397260274, 241.6438356164);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.m-5 {
+  margin: 1.25rem;
+  padding: 10px;
+  background: rgb(253.3561643836, 242.7397260274, 241.6438356164);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.m-6 {
+  margin: 1.5rem;
+  padding: 10px;
+  background: rgb(253.3561643836, 242.7397260274, 241.6438356164);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.m-7 {
+  margin: 1.75rem;
+  padding: 10px;
+  background: rgb(253.3561643836, 242.7397260274, 241.6438356164);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.m-8 {
+  margin: 2rem;
+  padding: 10px;
+  background: rgb(253.3561643836, 242.7397260274, 241.6438356164);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.p-1 {
+  padding: 0.25rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.col-1 {
+  flex: 0 0 8.3333333333%;
+  max-width: 8.3333333333%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.col-2 {
+  flex: 0 0 16.6666666667%;
+  max-width: 16.6666666667%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.col-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.col-4 {
+  flex: 0 0 33.3333333333%;
+  max-width: 33.3333333333%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.col-5 {
+  flex: 0 0 41.6666666667%;
+  max-width: 41.6666666667%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.col-7 {
+  flex: 0 0 58.3333333333%;
+  max-width: 58.3333333333%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.col-8 {
+  flex: 0 0 66.6666666667%;
+  max-width: 66.6666666667%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.col-9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.col-10 {
+  flex: 0 0 83.3333333333%;
+  max-width: 83.3333333333%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.col-11 {
+  flex: 0 0 91.6666666667%;
+  max-width: 91.6666666667%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+  margin-bottom: 20px;
+}
+.row > [class*=col-] {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 20px 15px;
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.bg-primary-light-1 {
+  background: rgb(236.5890410959, 117.6849315068, 105.4109589041);
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 4px;
+}
+
+.bg-primary-light-2 {
+  background: rgb(242.1780821918, 159.3698630137, 150.8219178082);
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 4px;
+}
+
+.bg-primary-light-3 {
+  background: rgb(247.7671232877, 201.0547945205, 196.2328767123);
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 4px;
+}
+
+.bg-primary-light-4 {
+  background: rgb(253.3561643836, 242.7397260274, 241.6438356164);
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 4px;
+}
+
+.bg-primary-light-5 {
+  background: hsl(5.6140350877, 78.0821917808%, 107.0588235294%);
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 4px;
+}
+
+.theme-candy .btn-themed {
+  background: #ff6b9d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.theme-candy .btn-themed:hover {
+  background: rgb(255, 56, 123.2297297297);
+}
+.theme-candy .candy-card-advanced {
+  border-left: 4px solid #ff6b9d;
+}
+.theme-candy .candy-card-advanced.featured {
+  background: hsl(339.7297297297, 100%, 115.9803921569%);
+}
+.theme-candy .candy-card-advanced.popular {
+  background: hsl(175.7480314961, 55.9471365639%, 100.4901960784%);
+}
+.theme-candy .candy-card-advanced.new {
+  background: rgb(252.9956896552, 254.224137931, 254.5043103448);
+}
+
+.theme-chocolate .btn-themed {
+  background: #8b4513;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.theme-chocolate .btn-themed:hover {
+  background: rgb(94.1329113924, 46.7278481013, 12.8670886076);
+}
+.theme-chocolate .candy-card-advanced {
+  border-left: 4px solid #8b4513;
+}
+.theme-chocolate .candy-card-advanced.featured {
+  background: rgb(240.2689873418, 185.996835443, 147.2310126582);
+}
+.theme-chocolate .candy-card-advanced.popular {
+  background: rgb(249.9375, 232.21875, 219.5625);
+}
+.theme-chocolate .candy-card-advanced.new {
+  background: hsl(27.5675675676, 87.0588235294%, 111.6666666667%);
+}
+
+.theme-gummy .btn-themed {
+  background: #32cd32;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.theme-gummy .btn-themed:hover {
+  background: #28a428;
+}
+.theme-gummy .candy-card-advanced {
+  border-left: 4px solid #32cd32;
+}
+.theme-gummy .candy-card-advanced.featured {
+  background: rgb(234.5, 250, 234.5);
+}
+.theme-gummy .candy-card-advanced.popular {
+  background: hsl(120, 92.523364486%, 124.0196078431%);
+}
+.theme-gummy .candy-card-advanced.new {
+  background: rgb(229.5, 255, 242.2);
+}
+
+.theme-cotton-candy .btn-themed {
+  background: #ffb6c1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.theme-cotton-candy .btn-themed:hover {
+  background: rgb(255, 131, 149.6849315068);
+}
+.theme-cotton-candy .candy-card-advanced {
+  border-left: 4px solid #ffb6c1;
+}
+.theme-cotton-candy .candy-card-advanced.featured {
+  background: hsl(350.9589041096, 100%, 130.6862745098%);
+}
+.theme-cotton-candy .candy-card-advanced.popular {
+  background: hsl(349.5238095238, 100%, 132.6470588235%);
+}
+.theme-cotton-candy .candy-card-advanced.new {
+  background: hsl(330, 100%, 115.5882352941%);
+}
+
+.btn-facebook {
+  background: #3b5998;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin: 5px;
+  cursor: pointer;
+}
+.btn-facebook:hover {
+  background: rgb(37.6090047393, 56.7322274882, 96.8909952607);
+}
+
+.btn-instagram {
+  background: #e4405f;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin: 5px;
+  cursor: pointer;
+}
+.btn-instagram:hover {
+  background: rgb(188.8096330275, 26.6903669725, 57.3348623853);
+}
+
+.btn-twitter {
+  background: #1da1f2;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin: 5px;
+  cursor: pointer;
+}
+.btn-twitter:hover {
+  background: rgb(10.5794979079, 118.0020920502, 183.9205020921);
+}
+
+.btn-youtube {
+  background: #ff0000;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin: 5px;
+  cursor: pointer;
+}
+.btn-youtube:hover {
+  background: rgb(178.5, 0, 0);
+}
+
+.candy-lollipop {
+  position: relative;
+}
+.candy-lollipop::before {
+  content: "lollipop";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}
+
+.candy-gummy {
+  position: relative;
+}
+.candy-gummy::before {
+  content: "gummy";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}
+
+.candy-chocolate {
+  position: relative;
+}
+.candy-chocolate::before {
+  content: "chocolate";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}
+
+.candy-hard-candy {
+  position: relative;
+}
+.candy-hard-candy::before {
+  content: "hard-candy";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}
+
+.candy-cotton-candy {
+  position: relative;
+}
+.candy-cotton-candy::before {
+  content: "cotton-candy";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}
+
+.color-demo {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+.color-demo .color-swatch {
+  padding: 20px;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  min-width: 120px;
+  text-align: center;
+}
+
+.bg-primary {
+  background: #e74c3c;
+}
+
+.bg-primary-light {
+  background: rgb(242.1780821918, 159.3698630137, 150.8219178082);
+}
+
+.bg-primary-lighter {
+  background: rgb(253.3561643836, 242.7397260274, 241.6438356164);
+}
+
+.bg-primary-dark {
+  background: rgb(168.2876712329, 34.5205479452, 20.7123287671);
+}
+
+.bg-primary-darker {
+  background: rgb(77.4657534247, 15.8904109589, 9.5342465753);
+}
+
+.bg-mixed {
+  background: rgb(141.5, 114, 139.5);
+}
+
+.calculated-width {
+  width: 66.6666666667%;
+}
+
+.scaled-padding {
+  padding: scale(20px, 150%);
+}
+
+.utilities-demo,
+.theme-demo,
+.grid-demo,
+.typography-demo {
+  background: white;
+  padding: 30px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.spacing-demo > div {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.candy-showcase-advanced {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.candy-card-advanced {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+}
+.candy-card-advanced:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+.candy-card-advanced .candy-icon-large {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+.candy-card-advanced h3 {
+  margin: 0 0 10px 0;
+  color: #333;
+}
+.candy-card-advanced .candy-price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #e74c3c;
+  margin-bottom: 15px;
+}
+
+.responsive-heading-1 {
+  font-size: 2.5rem;
+}
+@media (max-width: 768px) {
+  .responsive-heading-1 {
+    font-size: 2rem;
+  }
+}
+
+.responsive-heading-2 {
+  font-size: 2rem;
+}
+@media (max-width: 768px) {
+  .responsive-heading-2 {
+    font-size: 1.6rem;
+  }
+}
+
+.responsive-body {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+@media (max-width: 768px) {
+  .responsive-body {
+    font-size: 0.8rem;
+  }
+}
+
+.exercise-instructions {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.exercise-instructions .mission-section {
+  margin: 25px 0;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 4px solid #3498db;
+}
+.exercise-instructions .mission-section h3 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+.exercise-instructions .tip {
+  background: #e8f5e8;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #4caf50;
+  margin: 20px 0;
+}
+
+/*
+After completing this exercise, think about:
+
+1. How much code did loops save you?
+   - Without loops: Write 12 individual .col-1, .col-2, etc. classes
+   - With loops: One @for statement generates all 12
+
+2. How do maps make theming easier?
+   - Without maps: Hardcode colors everywhere
+   - With maps: Change the map, update all themes instantly
+
+3. When would you use @if vs @each vs @for?
+   - @if: Different styles based on conditions
+   - @each: Iterate over related data (themes, social networks)
+   - @for: Generate numbered classes (grid columns, spacing)
+
+4. How do built-in functions help with design consistency?
+   - Manual color variations: Guess hex codes
+   - Function variations: Mathematical relationships that always work
+
+5. Real-world impact:
+   - Design systems: One source of truth for all styling
+   - Maintenance: Change one variable, update entire site
+   - Team work: Designers can modify variables, developers handle logic
+
+This is how CSS frameworks like Bootstrap and Tailwind are built!
+*/
+
+/*# sourceMappingURL=exercises.css.map */

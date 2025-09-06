@@ -18,21 +18,21 @@
 // Example: @use 'partials/variables';
 
 // Step 1: Foundation files (needed by others)
-//@use 'partials/variables';
-//@use 'partials/mixins';
+@use 'partials/variables';
+@use 'partials/mixins';
 
 // Step 2: Base styles
-//@use 'partials/base';
+@use 'partials/base';
 
 // Step 3: Reusable components
-//@use 'partials/buttons';
+@use 'partials/buttons';
 
 // Step 4: Layout sections
-//@use 'partials/navigation';
-//@use 'partials/hero';
-//@use 'partials/categories';
-//@use 'partials/newsletter';
-//@use 'partials/footer';
+@use 'partials/navigation';
+@use 'partials/hero';
+@use 'partials/categories';
+@use 'partials/newsletter';
+@use 'partials/footer';
 
 // ==========================================
 // WHY THIS ORGANIZATION?

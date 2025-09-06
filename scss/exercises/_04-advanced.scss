@@ -51,33 +51,33 @@ $social-icons: (
 // The compiler creates multiple classes based on the loop
 
 // TODO: Generate margin utility classes
-// @for $i from 1 through 8 {
-//   .m-#{$i} {
-//     margin: $base-spacing * $i;
-//     padding: 10px;
-//     background: color.adjust($base-color, $lightness: 40%);
-//     border-radius: 4px;
-//     margin-bottom: 10px;
-//     display: inline-block;
-//   }
-// }
+@for $i from 1 through 8 {
+    .m-#{$i} {
+     margin: $base-spacing * $i;
+    padding: 10px;
+    background: color.adjust($base-color, $lightness: 40%);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    display: inline-block;
+    }
+}
 
 // TODO: Generate padding utility classes
-// @for $i from 1 through 6 {
-//   .p-#{$i} {
-//     padding: $base-spacing * $i;
-//   }
-// }
+@for $i from 1 through 6 {
+    .p-#{$i} {
+     padding: $base-spacing * $i;
+    }
+}
 
 // TODO: Generate a grid system
-// @for $i from 1 through 12 {
-//   .col-#{$i} {
-//     flex: 0 0 math.percentage(math.div($i, 12));
-//     max-width: math.percentage(math.div($i, 12));
-//     padding: 0 15px;
-//     box-sizing: border-box;
-//   }
-// }
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        flex: 0 0 math.percentage(math.div($i, 12));
+        max-width: math.percentage(math.div($i, 12));
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+}
 
 // Grid container
 .row {
@@ -97,17 +97,16 @@ $social-icons: (
 }
 
 // TODO: Generate color variations using built-in functions
-// @for $i from 1 through 5 {
-//   $lightness: $i * 10%;
-//
-//   .bg-primary-light-#{$i} {
-//     background: color.adjust($base-color, $lightness: $lightness);
-//     color: white;
-//     padding: 10px;
-//     margin: 5px;
-//     border-radius: 4px;
-//   }
-// }
+@for $i from 1 through 5 {
+  $lightness: $i * 10%;
+    .bg-primary-light-#{$i} {
+    background: color.adjust($base-color, $lightness: $lightness);
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 4px;
+    }
+}
 
 // ==========================================
 // STEP 2: @EACH LOOPS
@@ -117,77 +116,72 @@ $social-icons: (
 // This is similar to the for loops above, but uses data structures like maps and lists
 
 // TODO: Generate theme classes from the candy-themes map
-// @each $theme-name, $theme-colors in $candy-themes {
-//   .theme-#{$theme-name} {
-//     .btn-themed {
-//       background: map.get($theme-colors, primary);
-//       color: white;
-//       border: none;
-//       padding: 10px 20px;
-//       border-radius: 6px;
-//       cursor: pointer;
-//       transition: 0.3s ease;
-//
-//       &:hover {
-//         background: color.adjust(map.get($theme-colors, primary), $lightness: -10%);
-//       }
-//     }
-//
-//     .candy-card-advanced {
-//       border-left: 4px solid map.get($theme-colors, primary);
-//
-//       &.featured {
-//         background: color.adjust(map.get($theme-colors, primary), $lightness: 45%);
-//       }
-//
-//       &.popular {
-//         background: color.adjust(map.get($theme-colors, secondary), $lightness: 45%);
-//       }
-//
-//       &.new {
-//         background: color.adjust(map.get($theme-colors, accent), $lightness: 45%);
-//       }
-//     }
-//   }
-// }
+@each $theme-name, $theme-colors in $candy-themes {
+  .theme-#{$theme-name} {
+    .btn-themed {
+        background: map.get($theme-colors, primary);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.3s ease;
+        &:hover {
+        background: color.adjust(map.get($theme-colors, primary), $lightness: -10%);
+        }
+    }
+    .candy-card-advanced {
+        border-left: 4px solid map.get($theme-colors, primary);
+        &.featured {
+            background: color.adjust(map.get($theme-colors, primary), $lightness: 45%);
+    }
+        &.popular {
+            background: color.adjust(map.get($theme-colors, secondary), $lightness: 45%);
+    }
+        &.new {
+            background: color.adjust(map.get($theme-colors, accent), $lightness: 45%);
+        }
+    }
+ }
+}
 
 // TODO: Generate social media button styles
-// @each $network, $color in $social-icons {
-//   .btn-#{$network} {
-//     background: $color;
-//     color: white;
-//     border: none;
-//     padding: 10px 15px;
-//     border-radius: 4px;
-//     margin: 5px;
-//     cursor: pointer;
-//
-//     &:hover {
-//       background: color.adjust($color, $lightness: -15%);
-//     }
-//   }
-// }
+@each $network, $color in $social-icons {
+.btn-#{$network} {
+background: $color;
+color: white;
+border: none;
+padding: 10px 15px;
+border-radius: 4px;
+margin: 5px;
+cursor: pointer;
+
+    &:hover {
+    background: color.adjust($color, $lightness: -15%);
+    }
+  }
+}
 
 // TODO: Generate candy type variations
 $candy-types: (lollipop, gummy, chocolate, hard-candy, cotton-candy);
-// @each $type in $candy-types {
-//   .candy-#{$type} {
-//     position: relative;
-//
-//     &::before {
-//       content: "#{$type}";
-//       position: absolute;
-//       top: 5px;
-//       right: 5px;
-//       background: rgba(0,0,0,0.7);
-//       color: white;
-//       padding: 2px 6px;
-//       border-radius: 3px;
-//       font-size: 0.75rem;
-//       text-transform: capitalize;
-//     }
-//   }
-// }
+@each $type in $candy-types {
+.candy-#{$type} {
+    position: relative;
+
+    &::before {
+        content: "#{$type}";
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: rgba(0,0,0,0.7);
+        color: white;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-size: 0.75rem;
+        text-transform: capitalize;
+        }
+   }
+ }
 
 // ==========================================
 // STEP 3: @IF/@ELSE CONDITIONALS
@@ -195,55 +189,54 @@ $candy-types: (lollipop, gummy, chocolate, hard-candy, cotton-candy);
 // Conditional logic in your CSS!
 
 // TODO: Create a function that returns different values based on conditions
-// @function theme-color($theme, $variant: primary) {
-//   @if map-has-key($candy-themes, $theme) {
-//     $theme-map: map.get($candy-themes, $theme);
-//     @if map-has-key($theme-map, $variant) {
-//       @return map.get($theme-map, $variant);
-//     } @else {
-//       @return #333; // fallback color
-//     }
-//   } @else {
-//     @return #333; // fallback color
-//   }
-// }
+@function theme-color($theme, $variant: primary) {
+  @if map-has-key($candy-themes, $theme) {
+    $theme-map: map.get($candy-themes, $theme);
+    @if map-has-key($theme-map, $variant) {
+      @return map.get($theme-map, $variant);
+    } @else {
+      @return #333; // fallback color
+    }
+  } @else {
+    @return #333; // fallback color
+  }
+}
 
 // TODO: Create a mixin that changes styles based on theme
-// @mixin theme-aware-card($theme) {
-//   background: white;
-//   border-radius: 8px;
-//   padding: 20px;
-//   margin: 10px;
-//   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-//
-//   @if $theme == candy {
-//     border-top: 4px solid theme-color(candy, primary);
-//     background: linear-gradient(135deg, #fff, color-adjust(theme-color(candy, primary), $lightness: 48%));
-//   } @else if $theme == chocolate {
-//     border-top: 4px solid theme-color(chocolate, primary);
-//     background: linear-gradient(135deg, #fff, color-adjust(theme-color(chocolate, primary), $lightness: 48%));
-//   } @else if $theme == gummy {
-//     border-top: 4px solid theme-color(gummy, primary);
-//     background: linear-gradient(135deg, #fff, color-adjust(theme-color(gummy, primary), $lightness: 48%));
-//   } @else {
-//     border-top: 4px solid #ccc;
-//   }
-// }
+@mixin theme-aware-card($theme) {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  @if $theme == candy {
+    border-top: 4px solid theme-color(candy, primary);
+    background: linear-gradient(135deg, #fff, color-adjust(theme-color(candy, primary), $lightness: 48%));
+  } @else if $theme == chocolate {
+    border-top: 4px solid theme-color(chocolate, primary);
+    background: linear-gradient(135deg, #fff, color-adjust(theme-color(chocolate, primary), $lightness: 48%));
+  } @else if $theme == gummy {
+    border-top: 4px solid theme-color(gummy, primary);
+    background: linear-gradient(135deg, #fff, color-adjust(theme-color(gummy, primary), $lightness: 48%));
+  } @else {
+    border-top: 4px solid #ccc;
+  }
+}
 
 // TODO: Create responsive font sizing with conditionals
-// @function responsive-font($base-size, $screen-size: desktop) {
-//   @if $screen-size == mobile {
-//     @return $base-size * 0.8;
-//   } @else if $screen-size == tablet {
-//     @return $base-size * 0.9;
-//   } @else if $screen-size == desktop {
-//     @return $base-size;
-//   } @else if $screen-size == large-desktop {
-//     @return $base-size * 1.2;
-//   } @else {
-//     @return $base-size;
-//   }
-// }
+@function responsive-font($base-size, $screen-size: desktop) {
+  @if $screen-size == mobile {
+    @return $base-size * 0.8;
+  } @else if $screen-size == tablet {
+    @return $base-size * 0.9;
+  } @else if $screen-size == desktop {
+    @return $base-size;
+  } @else if $screen-size == large-desktop {
+    @return $base-size * 1.2;
+  } @else {
+    @return $base-size;
+  }
+}
 
 // ==========================================
 // STEP 4: BUILT-IN FUNCTIONS
@@ -267,25 +260,25 @@ $candy-types: (lollipop, gummy, chocolate, hard-candy, cotton-candy);
 }
 
 // TODO: Generate color variations using built-in functions
-// .bg-primary { background: $base-color; }
-// .bg-primary-light { background: color.adjust($base-color, $lightness: 20%); }
-// .bg-primary-lighter { background: color.adjust($base-color, $lightness: 40%); }
-// .bg-primary-dark { background: color.adjust($base-color, $lightness: -20%); }
-// .bg-primary-darker { background: color.adjust($base-color, $lightness: -40%); }
+.bg-primary { background: $base-color; }
+.bg-primary-light { background: color.adjust($base-color, $lightness: 20%); }
+.bg-primary-lighter { background: color.adjust($base-color, $lightness: 40%); }
+.bg-primary-dark { background: color.adjust($base-color, $lightness: -20%); }
+.bg-primary-darker { background: color.adjust($base-color, $lightness: -40%); }
 
 // TODO: Create mixed colors
-// .bg-mixed {
-//   background: color.mix($base-color, #3498db, 50%); // 50/50 mix
-// }
+.bg-mixed {
+  background: color.mix($base-color, #3498db, 50%); // 50/50 mix
+}
 
 // TODO: Use mathematical functions
-// .calculated-width {
-//   width: math.percentage(math.div(2,3)); // Converts to 66.666%
-// }
+.calculated-width {
+  width: math.percentage(math.div(2,3)); // Converts to 66.666%
+}
 
-// .scaled-padding {
-//   padding: scale(20px, 150%); // Increases by 50%
-// }
+.scaled-padding {
+  padding: scale(20px, 150%); // Increases by 50%
+}
 
 // ==========================================
 // STYLING THE DEMO ELEMENTS
@@ -350,28 +343,25 @@ $candy-types: (lollipop, gummy, chocolate, hard-candy, cotton-candy);
 // Responsive typography examples
 .responsive-heading-1 {
     // TODO: Use your responsive-font function
-    // font-size: responsive-font(2.5rem);
-    //
-    // @media (max-width: 768px) {
-    //   font-size: responsive-font(2.5rem, mobile);
-    // }
+    font-size: responsive-font(2.5rem);
+        @media (max-width: 768px) {
+      font-size: responsive-font(2.5rem, mobile);
+    }
 }
 
 .responsive-heading-2 {
-    // font-size: responsive-font(2rem);
-    //
-    // @media (max-width: 768px) {
-    //   font-size: responsive-font(2rem, mobile);
-    // }
+    font-size: responsive-font(2rem);
+        @media (max-width: 768px) {
+      font-size: responsive-font(2rem, mobile);
+    }
 }
 
 .responsive-body {
-    // font-size: responsive-font(1rem);
-    // line-height: 1.6;
-    //
-    // @media (max-width: 768px) {
-    //   font-size: responsive-font(1rem, mobile);
-    // }
+    font-size: responsive-font(1rem);
+    line-height: 1.6;
+        @media (max-width: 768px) {
+      font-size: responsive-font(1rem, mobile);
+    }
 }
 
 .exercise-instructions {
